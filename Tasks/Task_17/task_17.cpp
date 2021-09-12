@@ -68,12 +68,12 @@ Output{
 using namespace std;
 
 int task_17(){
-    long long int roomWidth, roomHeight;
+    long double roomWidth, roomHeight;
     //cout << "Enter width of the room: W = ";
     cin >> roomWidth;
     //cout << "Enter height of the room: H = ";
     cin >> roomHeight;
-    long long int firstTableX1, firstTableY1, firstTableX2, firstTableY2;
+    long double firstTableX1, firstTableY1, firstTableX2, firstTableY2;
     //cout << "Enter X1 = ";//Координаты нижнего левого угла первого стола
     cin >> firstTableX1;
     //cout << "Enter Y1 = ";
@@ -82,16 +82,16 @@ int task_17(){
     cin >> firstTableX2;
     //cout << "Enter Y2 = ";
     cin >> firstTableY2;
-    long long int firstTableWidth, firstTableHeight;//Рассчет ширины и высоты первого стола
+    long double firstTableWidth, firstTableHeight;//Рассчет ширины и высоты первого стола
     firstTableWidth = abs(firstTableX2 - firstTableX1);
     firstTableHeight = abs(firstTableY2 - firstTableY1);
-    long long int secondTableWidth, secondTableHeight;//Ширина и высота второго стола
+    long double secondTableWidth, secondTableHeight;//Ширина и высота второго стола
     //cout << "Enter width of the second table: w = ";
     cin >> secondTableWidth;
     //cout << "enter height of the second table: h = ";
     cin >> secondTableHeight;
     if (secondTableWidth + firstTableWidth <= roomWidth || secondTableHeight + firstTableHeight <= roomHeight ){
-        long long int counterX = 0, counterY = 0;
+        long double counterX = 0, counterY = 0;
         for (int i = 0; i < roomWidth + 1; ++i) {
             if (firstTableX1 < secondTableWidth){
                 firstTableX1++;
@@ -104,7 +104,7 @@ int task_17(){
                 counterY++;
             }
         }
-        long long int move;
+        long double move;
         if(counterX + secondTableWidth > roomWidth){
             move = counterY;
         }else if(counterY + secondTableHeight > roomHeight ){
@@ -113,6 +113,7 @@ int task_17(){
             move = min(counterX, counterY);
         }
         if (move + secondTableWidth < roomWidth || move + secondTableHeight < roomHeight){
+            cout << fixed << setprecision(10);
             cout << move << endl;//На тесте 3-4 выводит это значение, хотя ответ должен быть 2.0000000000
         } else{
             cout << -1;

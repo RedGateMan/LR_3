@@ -25,13 +25,13 @@ int task_12(){
     cin >> secondCircleRadius;
     long double distance = sqrt(pow((x2 - x1),2) + pow((y2 - y1),2));
     if (distance < secondCircleRadius && distance + firstCircleRadius <= secondCircleRadius){
-        cout << "YES!";
+        cout << "Да";
     } else if (distance < firstCircleRadius && distance + secondCircleRadius <= firstCircleRadius){
-        cout << "Yes, but...";
+        cout << "Да, но справедливо обратное для двух фигур";
     }else if (distance < firstCircleRadius + secondCircleRadius){
-        cout << "cross";
+        cout << "Фигуры пересекаются";
     } else {
-        cout << "nothing";
+        cout << "Ни одно условие не выполнено";
     }
     return 0;
 }
