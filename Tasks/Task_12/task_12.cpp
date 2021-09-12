@@ -10,8 +10,28 @@
 вывести сообщение “Ни одно условие не выполнено”
 */
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 int task_12(){
+    long double x1, y1, x2, y2, firstCircleRadius, secondCircleRadius;
+    cout << "Enter coordinates of small circle center:" << endl;
+    cin >> x1 >> y1;
+    cout << "Enter small circle radius:" << endl;
+    cin >> firstCircleRadius;
+    cout << "Enter coordinates of big circle center:" << endl;
+    cin >> x2 >> y2;
+    cout << "Enter big circle radius:" << endl;
+    cin >> secondCircleRadius;
+    long double distance = sqrt(pow((x2 - x1),2) + pow((y2 - y1),2));
+    if (distance < secondCircleRadius && distance + firstCircleRadius <= secondCircleRadius){
+        cout << "YES!";
+    } else if (distance < firstCircleRadius && distance + secondCircleRadius <= firstCircleRadius){
+        cout << "Yes, but...";
+    }else if (distance < firstCircleRadius + secondCircleRadius){
+        cout << "cross";
+    } else {
+        cout << "nothing";
+    }
     return 0;
 }

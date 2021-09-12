@@ -20,7 +20,7 @@ int main(){
             break;
         case 6: task_6();///OK
             break;
-        case 7: task_7();///under construction (40%: 1-completed, 2-debug, 3-0%)
+        case 7: task_7();///under construction (40%: 1-completed, 2-debug, 3-0%) (NO)
             break;
         case 8: task_8();///OK (Needs testing)
             break;
@@ -28,9 +28,9 @@ int main(){
             break;
         case 10: task_10();///NO
             break;
-        case 11: task_11();///OK
+        case 11: task_11();///Сделать нормальное число ПИ (OK)
             break;
-        case 12: task_12();///NO
+        case 12: task_12();///Доделать локализацию на русский и !!!запушить на гит!!! (OK)
             break;
         case 13: task_13();///OK
             break;
