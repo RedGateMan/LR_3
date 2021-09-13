@@ -30,7 +30,7 @@ int main(){
             break;
         case 11: task_11();///Сделать нормальное число ПИ (OK)
             break;
-        case 12: task_12();///Доделать локализацию на русский(OK)
+        case 12: task_12();///OK
             break;
         case 13: task_13();///OK
             break;
@@ -40,7 +40,7 @@ int main(){
             break;
         case 16: task_16();///NO
             break;
-        case 17: task_17();///under construction (fixed output 0.0000000000)
+        case 17: task_17();///OK
             break;
         default: cout << "Vadim, enter correct task number!";
             break;
