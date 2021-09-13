@@ -11,9 +11,12 @@
 */
 #include <iostream>
 #include <cmath>
+#include <Windows.h>
 using namespace std;
 
 int task_12(){
+    system("chcp 65001");
+    SetConsoleOutputCP(CP_UTF8);
     long double x1, y1, x2, y2, firstCircleRadius, secondCircleRadius;
     cout << "Enter coordinates of first circle center:" << endl;
     cin >> x1 >> y1;

@@ -6,9 +6,12 @@
 */
 
 #include <iostream>
+#include <Windows.h>
 using namespace std;
 
 int task_15(){
+    system("chcp 65001");
+    SetConsoleOutputCP(CP_UTF8);
     cout << "Hello, World";
     return 0;
 }
