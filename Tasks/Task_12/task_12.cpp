@@ -15,20 +15,20 @@ using namespace std;
 
 int task_12(){
     long double x1, y1, x2, y2, firstCircleRadius, secondCircleRadius;
-    cout << "Enter coordinates of small circle center:" << endl;
+    cout << "Enter coordinates of first circle center:" << endl;
     cin >> x1 >> y1;
-    cout << "Enter small circle radius:" << endl;
+    cout << "Enter first circle radius:" << endl;
     cin >> firstCircleRadius;
-    cout << "Enter coordinates of big circle center:" << endl;
+    cout << "Enter coordinates of second circle center:" << endl;
     cin >> x2 >> y2;
-    cout << "Enter big circle radius:" << endl;
+    cout << "Enter second circle radius:" << endl;
     cin >> secondCircleRadius;
     long double distance = sqrt(pow((x2 - x1),2) + pow((y2 - y1),2));
     if (distance < secondCircleRadius && distance + firstCircleRadius <= secondCircleRadius){
         cout << "Да";
     } else if (distance < firstCircleRadius && distance + secondCircleRadius <= firstCircleRadius){
         cout << "Да, но справедливо обратное для двух фигур";
-    }else if (distance < firstCircleRadius + secondCircleRadius){
+    }else if (distance <= firstCircleRadius + secondCircleRadius){
         cout << "Фигуры пересекаются";
     } else {
         cout << "Ни одно условие не выполнено";
