@@ -17,7 +17,7 @@ int task_4() {
     cin >> k;
     cout << "Enter (x,y)";
     cin >> x >> y;
-    if (x < k && y < k && x >= 0 && y >= 0) {//Рассчёт расстояний до всех сторон, при условии, что точка находится ы квалрате
+    if (x < k && y < k && x >= 0 && y >= 0) {//Рассчёт расстояний до всех сторон, при условии, что точка находится в квалрате
         ld distance1 = x;
         ld distance2 = y;
         ld distance3 = k - x;
@@ -26,20 +26,39 @@ int task_4() {
         ld distance6 = min(distance3, distance4);
         ld distance = min(distance5, distance6);
         cout << "Minimal distance is " << distance;
-    }
-    else if (x == 0 || y == 0){
+    } else if (x == 0 || y == 0){
         cout << "Minimal distance is 0";
-    }
-    else if (x > k || y > k){
-        ld distance1 = x - k;
-        ld distance2 = y - k;
+    } else if (k > 0 && (x > k || y > k)){
+        ld distance1 = abs(x - k);
+        ld distance2 = abs(y - k);
         ld distance = min(distance1, distance2);
         cout << "The dot is outside of the square " << endl <<  "Minimal distance is " << distance;
-    }
-    else if (x < 0 || y < 0){
-        ld distance1 = -x;
-        ld distance2 = -y;
-        ld distance = min(distance1, distance2);
+    } else if (x > k && y > k && x < 0 && y < 0){
+        ld distance1 = abs(k - x);
+        ld distance2 = abs(k - y);
+        ld distance3 = -x;
+        ld distance4 = -y;
+        ld distance5 = min(distance1, distance2);
+        ld distance6 = min(distance3, distance4);
+        ld distance = min(distance5, distance6);
+        cout << "Minimal distance is " << distance;
+    } else if (x < k || y < k){
+        ld distance1 = abs(k - x);
+        ld distance2 = abs(k - y);
+        ld distance3 = abs(x);
+        ld distance4 = abs(y);
+        ld distance5 = min(distance1, distance2);
+        ld distance6 = min(distance3, distance4);
+        ld distance = min(distance5, distance6);
+        cout << "The dot is outside of the square " << endl <<  "Minimal distance is " << distance;
+    }else {
+        ld distance1 = abs(k - x);
+        ld distance2 = abs(k - y);
+        ld distance3 = abs(x);
+        ld distance4 = abs(y);
+        ld distance5 = min(distance1, distance2);
+        ld distance6 = min(distance3, distance4);
+        ld distance = min(distance5, distance6);
         cout << "The dot is outside of the square " << endl <<  "Minimal distance is " << distance;
     }
     return 0;
