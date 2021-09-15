@@ -38,7 +38,7 @@ int main(){
             break;
         case 15: task_15();///NO
             break;
-        case 16: task_16();///NO
+        case 16: task_16();///OK
             break;
         case 17: task_17();///OK
             break;
