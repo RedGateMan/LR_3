@@ -28,7 +28,7 @@ int main(){
             break;
         case 10: task_10();///NO
             break;
-        case 11: task_11();///Сделать нормальное число ПИ (OK)
+        case 11: task_11();///OK
             break;
         case 12: task_12();///OK
             break;
@@ -36,7 +36,7 @@ int main(){
             break;
         case 14: task_14();///OK
             break;
-        case 15: task_15();///NO
+        case 15: task_15();///OK
             break;
         case 16: task_16();///OK
             break;
