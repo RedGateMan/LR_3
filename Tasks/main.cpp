@@ -26,7 +26,7 @@ int main(){
             break;
         case 9: task_9();///OK
             break;
-        case 10: task_10();///NO
+        case 10: task_10();///NO(PIZDEC)
             break;
         case 11: task_11();///OK
             break;

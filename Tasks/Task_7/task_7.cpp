@@ -62,33 +62,31 @@ int task_7(){
             cin >> c;
             long double D = pow(b, 2) - 4 * a * (c - 2 * a);
             bool flag1, flag2;
+            long double t1, t2;
+            t1 = (-b - sqrt(D)) / (2 * a);
+            t2 = (-b + sqrt(D)) / (2 * a);
             if (D < 0) {
                 cout << "There are no solutions for the expression :(";
-                break;
-            }
-            else {
-                long double t1, t2;
-                t1 = (-b - sqrt(D)) / (2 * a);
-                t2 = (-b + sqrt(D)) / (2 * a);
-                long double D1 = t1 - 4;
+                return 1;
+            } else {
+                long double D1 = pow(t1, 2) - 4 * a * (c - 2 * a);
                 if (D1 < 0) {
                     cout << "There are no solutions for the expression 1 :(" << endl;
                     flag1 = false;
-                }
-                else{
-                    long double x1 = (-sqrt(t1) - sqrt(D1)) / (2 * a);
-                    long double x2 = (-sqrt(t1) + sqrt(D1)) / (2 * a);
+                } else {
+                    long double x1 = (t1 - sqrt(pow(t1, 2) - 4)) / 2;
+                    long double x2 = (t1 + sqrt(pow(t1, 2) - 4)) / 2;
                     cout << "x1 = "<< x1 << " " << "x2 = " << x2 << endl;
                     flag1 = true;
                 }
-                long double D2 = t2 - 4;
+                long double D2 = pow(t2, 2) - 4 * a * (c - 2 * a);
                 if (D2 < 0) {
                     cout << "There are no solutions for the expression 2 :(" << endl;
                     flag2 = false;
                 }
                 else{
-                    long double x3 = (-sqrt(t2) - sqrt(D2)) / (2 * a);
-                    long double x4 = (-sqrt(t2) + sqrt(D2)) / (2 * a);
+                    long double x3 = (t2 - sqrt(pow(t2, 2) - 4)) / 2;
+                    long double x4 = (t2 + sqrt(pow(t2, 2) - 4)) / 2;
                     cout << "x3 = " << x3 << " " << "x4 = " << x4 << endl;
                     flag2 = true;
                 }
