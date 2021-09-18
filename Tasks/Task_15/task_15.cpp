@@ -18,7 +18,6 @@ int task_15(){
     cin >> K;
     long long integerAmountOfMushrooms;
     integerAmountOfMushrooms = K;
-    cout << fixed << setprecision(129);
     if (integerAmountOfMushrooms != K){
         cout << "мы нашли " << K << " гриба в лесу";
     } else {
