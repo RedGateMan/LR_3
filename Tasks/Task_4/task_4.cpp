@@ -8,6 +8,8 @@
 до ближайшей стороны квадрата.
 */
 #include <iostream>
+#include <cmath>
+
 typedef long double ld;
 using namespace std;
 
@@ -17,49 +19,67 @@ int task_4() {
     cin >> k;
     cout << "Enter (x,y)";
     cin >> x >> y;
-    if (x < k && y < k && x >= 0 && y >= 0) {//Рассчёт расстояний до всех сторон, при условии, что точка находится в квалрате
-        ld distance1 = x;
-        ld distance2 = y;
-        ld distance3 = k - x;
-        ld distance4 = k - y;
-        ld distance5 = min(distance1, distance2);
-        ld distance6 = min(distance3, distance4);
-        ld distance = min(distance5, distance6);
-        cout << "Minimal distance is " << distance;
-    } else if (x == 0 || y == 0){
+    if (x == 0 && y == 0) {
         cout << "Minimal distance is 0";
-    } else if (k > 0 && (x > k || y > k)){
-        ld distance1 = abs(x - k);
-        ld distance2 = abs(y - k);
-        ld distance = min(distance1, distance2);
-        cout << "The dot is outside of the square " << endl <<  "Minimal distance is " << distance;
-    } else if (x > k && y > k && x < 0 && y < 0){
-        ld distance1 = abs(k - x);
-        ld distance2 = abs(k - y);
-        ld distance3 = -x;
-        ld distance4 = -y;
-        ld distance5 = min(distance1, distance2);
-        ld distance6 = min(distance3, distance4);
-        ld distance = min(distance5, distance6);
-        cout << "Minimal distance is " << distance;
-    } else if (x < k || y < k){
-        ld distance1 = abs(k - x);
-        ld distance2 = abs(k - y);
-        ld distance3 = abs(x);
-        ld distance4 = abs(y);
-        ld distance5 = min(distance1, distance2);
-        ld distance6 = min(distance3, distance4);
-        ld distance = min(distance5, distance6);
-        cout << "The dot is outside of the square " << endl <<  "Minimal distance is " << distance;
-    }else {
-        ld distance1 = abs(k - x);
-        ld distance2 = abs(k - y);
-        ld distance3 = abs(x);
-        ld distance4 = abs(y);
-        ld distance5 = min(distance1, distance2);
-        ld distance6 = min(distance3, distance4);
-        ld distance = min(distance5, distance6);
-        cout << "The dot is outside of the square " << endl <<  "Minimal distance is " << distance;
+        return 0;
+    }
+    if (x <= 0 && y <= 0 && k <= 0) {
+        x = -x;
+        y = -y;
+        k = -k;
+    }
+    if (k > 0 && x >= 0 && y >= 0) {//Квадрат в первой четверти и точка в первой четверти
+        if ((x == k && y <= k) || (x <= k && y == k) || (x == 0 && y <= k) || (x <= k && y == 0)) {
+            cout << "Minimal distance is 0";
+        } else if (x < k && y < k) {//Точка в квадрате
+            ld distance1 = k - x;
+            ld distance2 = k - y;
+            ld distance3 = k;
+            ld distance4 = y;
+            ld distance5 = min(distance4, distance3);
+            ld distance6 = min(distance1, distance2);
+            ld distance = min(distance5, distance6);
+            cout << "Minimal distance is " << distance;
+        } else if (x >= k || y >= k) {
+            if ((x >= k && y > k) || (x > k && y >= k)) {//точка в углу квадрата
+                cout << "The dot is outside the square. Minimal distance is "
+                     << sqrt(pow(x - k, 2) + pow(k - y, 2));
+                return 0;
+            } else if (x < k && y > k) {//Точка сверху квадрата
+                cout << "The dot is outside the square. Minimal distance is " << y - k;
+            } else if (x > k && y < k) {//Точка справа квадрата
+                cout << "The dot is outside the square. Minimal distance is " << x - k;
+            }
+        }
+    } else if ((x < 0 && y < 0 && k > 0) || (x > 0 && y > 0 && k < 0)) {//Квадрат и точка в разных четвертях
+        x = -x;
+        y = -y;
+        k = -k;
+        cout << "The dot is outside the square. Minimal distance is "
+             << sqrt(pow(x, 2) + pow(y, 2));
+        return 0;
+    }
+
+    if (k < 0) {//квадрат в 3 точка в 4
+        swap(x, y);
+        x = -x;
+        y = -y;
+        k = abs(k);
+    }
+    if (x >= 0 && y <= 0) {
+        swap(x, y);
+    }
+    if (y > k) {
+        cout << "The dot is outside the square. Minimal distance is "
+             << sqrt(pow(x, 2) + pow(k - y, 2));
+
+    } else if (x > k) {
+        cout << "The dot is outside the square. Minimal distance is "
+             << sqrt(pow(x - k, 2) + pow(y, 2));
+    } else if (y < 0) {
+        cout << "The dot is outside the square. Minimal distance is " << abs(y);
+    } else if (x < 0) {
+        cout << "The dot is outside the square. Minimal distance is " << abs(x);
     }
     return 0;
 }
