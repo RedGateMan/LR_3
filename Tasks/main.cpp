@@ -20,7 +20,7 @@ int main(){
             break;
         case 6: task_6();///OK
             break;
-        case 7: task_7();///under construction (40%: 1-completed, 2-debug, 3-0%) (NO)
+        case 7: task_7();///under construction (40%: 1-completed, 2-completed, 3-0%) (NO)
             break;
         case 8: task_8();///OK (Needs testing)
             break;
