@@ -27,7 +27,7 @@ int main() {
             task_6();///OK
             break;
         case 7:
-            task_7();///under construction (40%: 1-completed, 2-completed, 3-0%) (NO) (PIZDA) (POLNAYA}
+            task_7();///NO
             break;
         case 8:
             task_8();///OK (Needs testing)
@@ -42,7 +42,7 @@ int main() {
             task_11();///OK
             break;
         case 12:
-            task_12();///OK (CHECK CASE PEREKRITIE)
+            task_12();///OK
             break;
         case 13:
             task_13();///OK
