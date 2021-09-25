@@ -69,56 +69,64 @@ using namespace std;
 
 int task_17() {
     long double roomWidth, roomHeight;
-    //cout << "Enter width of the room: W = ";
+    cout << "Enter width of the room: W = ";
     cin >> roomWidth;
-    //cout << "Enter height of the room: H = ";
+    cout << "Enter height of the room: H = ";
     cin >> roomHeight;
     long double firstTableX1, firstTableY1, firstTableX2, firstTableY2;
-    //cout << "Enter X1 = ";//Координаты нижнего левого угла первого стола
+    cout << "Enter X1 = ";//Координаты нижнего левого угла первого стола
     cin >> firstTableX1;
-    //cout << "Enter Y1 = ";
+    cout << "Enter Y1 = ";
     cin >> firstTableY1;
-    //cout << "Enter X2 = ";//Координаты правого верхнего угла стола
+    cout << "Enter X2 = ";//Координаты правого верхнего угла стола
     cin >> firstTableX2;
-    //cout << "Enter Y2 = ";
+    cout << "Enter Y2 = ";
     cin >> firstTableY2;
     long double firstTableWidth, firstTableHeight;//Рассчет ширины и высоты первого стола
     firstTableWidth = abs(firstTableX2 - firstTableX1);
     firstTableHeight = abs(firstTableY2 - firstTableY1);
     long double secondTableWidth, secondTableHeight;//Ширина и высота второго стола
-    //cout << "Enter width of the second table: w = ";
+    cout << "Enter width of the second table: w = ";
     cin >> secondTableWidth;
-    //cout << "enter height of the second table: h = ";
+    cout << "Enter height of the second table: h = ";
     cin >> secondTableHeight;
     if (secondTableWidth + firstTableWidth <= roomWidth || secondTableHeight + firstTableHeight <= roomHeight) {
-        long double counterX = 0, counterY = 0;//Переписать сдвиг до координаты второго стола сверху снизу слева и справа
-        for (int i = 0; i < roomWidth + 1; ++i) {
-            if (firstTableX1 < secondTableWidth) {
-                firstTableX1++;
-                counterX++;
-            }
+        long double moveUp = 0, moveDown = 0, moveLeft = 0, moveRight = 0;
+        if (secondTableWidth > firstTableX1) {
+            moveRight = secondTableWidth - firstTableX1;
         }
-        for (int i = 0; i < roomHeight + 1; ++i) {
-            if (firstTableY1 < secondTableHeight) {
-                firstTableY1++;
-                counterY++;
-            }
+        if (roomWidth - secondTableWidth < firstTableX2) {
+            moveLeft = firstTableX2 - (roomWidth - secondTableWidth);
         }
-        long double move;
-        if (counterX + secondTableWidth > roomWidth) {
-            move = counterY;
-        } else if (counterY + secondTableHeight > roomHeight) {
-            move = counterX;
-        } else {
-            move = min(counterX, counterY);
+        if (secondTableHeight > firstTableY1) {
+            moveUp = secondTableHeight - firstTableY1;
         }
-        if (move + secondTableWidth < roomWidth || move + secondTableHeight < roomHeight) {
-            cout << fixed << setprecision(10);
-            cout << move << endl;//На тесте 3-4 выводит это значение, хотя ответ должен быть 2.0000000000
-        } else {
+        if (roomHeight - secondTableHeight < firstTableY2) {
+            moveDown = firstTableY2 - (roomHeight - secondTableHeight);
+        }
+        cout << fixed << setprecision(6);
+
+
+        if ((firstTableX1 - moveLeft < 0) && (firstTableY1 - moveDown < 0) && (firstTableX2 + moveRight > roomWidth) &&
+            (firstTableY2 + moveUp > roomHeight)) {//Если по итогу сдвигов стол выходит за рамки комнаты
             cout << -1;
         }
-    } else
+        if (firstTableY1 - moveDown < 0) {
+            moveDown += roomHeight;
+        }
+        if (firstTableX2 + moveRight > roomWidth) {
+            moveRight += roomWidth;
+        }
+        if (firstTableY2 + moveUp > roomHeight) {
+            moveUp += roomHeight;
+        }
+        if (firstTableX1 - moveLeft < 0) {
+            moveLeft += roomWidth;
+        }
+        cout << min(min(moveUp, moveDown), min(moveRight, moveLeft));
+
+    } else {
         cout << -1;
+    }
     return 0;
 }

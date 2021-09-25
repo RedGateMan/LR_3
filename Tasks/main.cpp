@@ -57,7 +57,7 @@ int main() {
             task_16();///OK
             break;
         case 17:
-            task_17();///NO (PODUMAT')
+            task_17();///OK
             break;
         default:
             cout << "Vadim, enter correct task number!";
