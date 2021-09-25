@@ -26,27 +26,23 @@ int task_7() {
             cin >> b;
             cout << "c = ";
             cin >> c;
-            double D = b * b - 4 * a * c;
-            bool flag1 = false, flag2 = false;
-            if (D < 0) {
-                cout << "There are no solutions for the expression :(";
-            } else {
-                long double t1 = (-b - sqrt(D)) / (2 * a);
-                long double t2 = (-b + sqrt(D)) / (2 * a);
-                if (t1 >= 0) {
-                    long double x1 = sqrt(t1);
-                    long double x2 = -sqrt(t1);
-                    cout << "x1 = " << x1 << " " << "x2 = " << x2 << endl;
-                    flag1 = true;
-                }
-                if (t2 >= 0) {
-                    long double x3 = sqrt(t2);
-                    long double x4 = -sqrt(t2);
-                    cout << "x3 = " << x3 << " " << "x4 = " << x4 << endl;
-                    flag2 = true;
-                }
-                if (flag1 == 0 && flag2 == 0)
+            if (a == 0) {
+                if (b == 0) {
+                    if (c == 0) {
+                        //A = 0, B = 0, C = 0
+                        cout << "x belongs R";
+                        return 0;
+                    } else {
+                        cout << "No solutions";
+                        return 0;
+                    }
+                } else if (c < 0) {
+                    cout << "Solutions" << endl <<"x1 = " << sqrt(-c / b) << endl << "x2 = " << -sqrt(-c / b);
+                    return 0;
+                } else {
                     cout << "No solutions";
+                    return 0;
+                }
             }
             break;
         }
