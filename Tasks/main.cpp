@@ -3,6 +3,8 @@
 
 using namespace std;
 
+// TODO: Дописать 7.2, 7.3, 10
+// TODO: Протестить 8 задание
 int main() {
     int a;
     cout << "Enter task number:";
@@ -18,7 +20,7 @@ int main() {
             task_3();///OK
             break;
         case 4:
-            task_4();///OK(TESTED)
+            task_4();///OK
             break;
         case 5:
             task_5();///OK
@@ -30,13 +32,13 @@ int main() {
             task_7();///NO
             break;
         case 8:
-            task_8();///OK (Needs testing)
+            task_8();///OK
             break;
         case 9:
             task_9();///OK
             break;
         case 10:
-            task_10();///NO(PIZDEC)
+            task_10();///NO
             break;
         case 11:
             task_11();///OK
