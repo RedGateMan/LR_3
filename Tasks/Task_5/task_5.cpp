@@ -4,9 +4,10 @@
 Составить программу используя условный оператор if:
 */
 #include <iostream>
+
 using namespace std;
 
-int task_5(){
+int task_5() {
     long double Z, a, b, c, d;
     cout << "Enter a:";
     cin >> a;
@@ -16,13 +17,11 @@ int task_5(){
     cin >> c;
     cout << "Enter d:";
     cin >> d;
-    if (c >= d && a < d){
+    if (c >= d && a < d) {
         Z = a + b / c;
-    }
-    else if (c < d && a >= d){
+    } else if (c < d && a >= d) {
         Z = a - b / c;
-    }
-    else{
+    } else {
         Z = 0;
     }
     cout << Z;

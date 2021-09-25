@@ -6,9 +6,10 @@
 */
 #include <iostream>
 #include <cmath>
+
 using namespace std;
 
-int task_13(){
+int task_13() {
     long double R, P, Q;
     cout << "Enter R = ";
     cin >> R;
@@ -17,7 +18,7 @@ int task_13(){
     cout << "Enter angle in degrees Q = ";
     cin >> Q;
     long double D = sin(Q) * P;
-    if (D >= 2 * R){
+    if (D >= 2 * R) {
         cout << "YES!";
     } else {
         cout << "NO!";

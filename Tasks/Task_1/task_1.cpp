@@ -6,16 +6,16 @@
 */
 
 #include <iostream>
+
 using namespace std;
 
 int task_1() {
     int x, y;
     cout << "Enter variables:" << endl;
     cin >> x >> y;
-    if (x % y == 0){
+    if (x % y == 0) {
         cout << "YES" << endl;
-    }
-    else {
+    } else {
         cout << "NO" << endl;
     }
     return 0;

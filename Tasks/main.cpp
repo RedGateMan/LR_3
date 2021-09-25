@@ -3,46 +3,64 @@
 
 using namespace std;
 
-int main(){
+int main() {
     int a;
     cout << "Enter task number:";
     cin >> a;
-    switch(a){
-        case 1: task_1();///OK
+    switch (a) {
+        case 1:
+            task_1();///OK
             break;
-        case 2: task_2();///OK
+        case 2:
+            task_2();///OK
             break;
-        case 3: task_3();///OK
+        case 3:
+            task_3();///OK
             break;
-        case 4: task_4();///OK
+        case 4:
+            task_4();///OK(TESTED)
             break;
-        case 5: task_5();///OK
+        case 5:
+            task_5();///OK
             break;
-        case 6: task_6();///OK
+        case 6:
+            task_6();///OK
             break;
-        case 7: task_7();///under construction (40%: 1-completed, 2-completed, 3-0%) (NO)
+        case 7:
+            task_7();///under construction (40%: 1-completed, 2-completed, 3-0%) (NO) (PIZDA) (POLNAYA}
             break;
-        case 8: task_8();///OK (Needs testing)
+        case 8:
+            task_8();///OK (Needs testing)
             break;
-        case 9: task_9();///OK
+        case 9:
+            task_9();///OK
             break;
-        case 10: task_10();///NO(PIZDEC)
+        case 10:
+            task_10();///NO(PIZDEC)
             break;
-        case 11: task_11();///OK
+        case 11:
+            task_11();///OK
             break;
-        case 12: task_12();///OK
+        case 12:
+            task_12();///OK (CHECK CASE PEREKRITIE)
             break;
-        case 13: task_13();///OK
+        case 13:
+            task_13();///OK
             break;
-        case 14: task_14();///OK
+        case 14:
+            task_14();///OK
             break;
-        case 15: task_15();///OK
+        case 15:
+            task_15();///OK
             break;
-        case 16: task_16();///OK
+        case 16:
+            task_16();///OK
             break;
-        case 17: task_17();///OK
+        case 17:
+            task_17();///NO (PODUMAT')
             break;
-        default: cout << "Vadim, enter correct task number!";
+        default:
+            cout << "Vadim, enter correct task number!";
             break;
     }
 }

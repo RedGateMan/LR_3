@@ -6,17 +6,18 @@
 */
 
 #include <iostream>
+
 using namespace std;
 
-int task_9(){
+int task_9() {
     long double x, y, z;
     cout << "Enter X, Y, Z (Sides of triangle): " << endl;
     cin >> x >> y >> z;
-    if(x <= 0 || y <= 0 || z <= 0)
+    if (x <= 0 || y <= 0 || z <= 0)
         cout << "Enter correct length!";
-    else if (x + y > z){
-        if (x + z > y){
-            if (y + z > x){
+    else if (x + y > z) {
+        if (x + z > y) {
+            if (y + z > x) {
                 cout << "Triangle exists!" << endl;
             } else
                 cout << "Triangle don't exist!" << endl;

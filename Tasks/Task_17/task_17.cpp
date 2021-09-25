@@ -67,7 +67,7 @@ Output{
 
 using namespace std;
 
-int task_17(){
+int task_17() {
     long double roomWidth, roomHeight;
     //cout << "Enter width of the room: W = ";
     cin >> roomWidth;
@@ -90,32 +90,32 @@ int task_17(){
     cin >> secondTableWidth;
     //cout << "enter height of the second table: h = ";
     cin >> secondTableHeight;
-    if (secondTableWidth + firstTableWidth <= roomWidth || secondTableHeight + firstTableHeight <= roomHeight ){
-        long double counterX = 0, counterY = 0;
+    if (secondTableWidth + firstTableWidth <= roomWidth || secondTableHeight + firstTableHeight <= roomHeight) {
+        long double counterX = 0, counterY = 0;//Переписать сдвиг до координаты второго стола сверху снизу слева и справа
         for (int i = 0; i < roomWidth + 1; ++i) {
-            if (firstTableX1 < secondTableWidth){
+            if (firstTableX1 < secondTableWidth) {
                 firstTableX1++;
                 counterX++;
             }
         }
         for (int i = 0; i < roomHeight + 1; ++i) {
-            if (firstTableY1 < secondTableHeight){
+            if (firstTableY1 < secondTableHeight) {
                 firstTableY1++;
                 counterY++;
             }
         }
         long double move;
-        if(counterX + secondTableWidth > roomWidth){
+        if (counterX + secondTableWidth > roomWidth) {
             move = counterY;
-        }else if(counterY + secondTableHeight > roomHeight ){
+        } else if (counterY + secondTableHeight > roomHeight) {
             move = counterX;
         } else {
             move = min(counterX, counterY);
         }
-        if (move + secondTableWidth < roomWidth || move + secondTableHeight < roomHeight){
+        if (move + secondTableWidth < roomWidth || move + secondTableHeight < roomHeight) {
             cout << fixed << setprecision(10);
             cout << move << endl;//На тесте 3-4 выводит это значение, хотя ответ должен быть 2.0000000000
-        } else{
+        } else {
             cout << -1;
         }
     } else

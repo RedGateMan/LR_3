@@ -8,14 +8,15 @@
 */
 #include <iostream>
 #include <cmath>
+
 using namespace std;
 
-int task_7(){
+int task_7() {
     int expressionType;
     cout << "Choose type of the expression (1-3):";
     cin >> expressionType;
     switch (expressionType) {
-        case 1:{
+        case 1: {
             double a, b, c;
             cout << "You've chosen 1-st type of expression ax^4 + bx^2 + c = 0 " << endl;
             cout << "Enter coefficients: " << endl;
@@ -29,23 +30,22 @@ int task_7(){
             bool flag1 = false, flag2 = false;
             if (D < 0) {
                 cout << "There are no solutions for the expression :(";
-            }
-            else {
+            } else {
                 long double t1 = (-b - sqrt(D)) / (2 * a);
                 long double t2 = (-b + sqrt(D)) / (2 * a);
-                if(t1 >= 0){
+                if (t1 >= 0) {
                     long double x1 = sqrt(t1);
                     long double x2 = -sqrt(t1);
-                    cout << "x1 = "<< x1 << " " << "x2 = " << x2 << endl;
+                    cout << "x1 = " << x1 << " " << "x2 = " << x2 << endl;
                     flag1 = true;
                 }
-                if(t2 >= 0){
+                if (t2 >= 0) {
                     long double x3 = sqrt(t2);
                     long double x4 = -sqrt(t2);
                     cout << "x3 = " << x3 << " " << "x4 = " << x4 << endl;
                     flag2 = true;
                 }
-                if(flag1 == 0 && flag2 == 0)
+                if (flag1 == 0 && flag2 == 0)
                     cout << "No solutions";
             }
             break;
@@ -76,21 +76,20 @@ int task_7(){
                 } else {
                     long double x1 = (t1 - sqrt(pow(t1, 2) - 4)) / 2;
                     long double x2 = (t1 + sqrt(pow(t1, 2) - 4)) / 2;
-                    cout << "x1 = "<< x1 << " " << "x2 = " << x2 << endl;
+                    cout << "x1 = " << x1 << " " << "x2 = " << x2 << endl;
                     flag1 = true;
                 }
                 long double D2 = pow(t2, 2) - 4 * a * (c - 2 * a);
                 if (D2 < 0) {
                     cout << "There are no solutions for the expression 2 :(" << endl;
                     flag2 = false;
-                }
-                else{
+                } else {
                     long double x3 = (t2 - sqrt(pow(t2, 2) - 4)) / 2;
                     long double x4 = (t2 + sqrt(pow(t2, 2) - 4)) / 2;
                     cout << "x3 = " << x3 << " " << "x4 = " << x4 << endl;
                     flag2 = true;
                 }
-                if (flag1 == 0 && flag2 == 0){
+                if (flag1 == 0 && flag2 == 0) {
                     cout << "No solutions";
                 }
             }

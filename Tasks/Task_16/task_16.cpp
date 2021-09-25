@@ -5,9 +5,10 @@
 */
 
 #include <iostream>
+
 using namespace std;
 
-int task_16(){
+int task_16() {
     long long firstNumber, secondNumber, temp1, temp2;
     cout << "Enter first number = ";
     cin >> firstNumber;
@@ -15,7 +16,7 @@ int task_16(){
     cout << "Enter second number = ";
     cin >> secondNumber;
     temp2 = secondNumber;
-    while(firstNumber != secondNumber){
+    while (firstNumber != secondNumber) {
         if (firstNumber > secondNumber)
             firstNumber -= secondNumber;
         else

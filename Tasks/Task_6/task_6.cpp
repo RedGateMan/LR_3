@@ -4,9 +4,10 @@
 Составить программу используя переключатель switch:
 */
 #include <iostream>
+
 using namespace std;
 
-int task_6(){
+int task_6() {
     int N;
     double a, b, c;
     cout << "Enter N(case number 2, 3, 7, 56):";
@@ -17,7 +18,7 @@ int task_6(){
     cin >> b;
     cout << "Enter c:";
     cin >> c;
-    switch(N){
+    switch (N) {
         case 2:
             cout << b * c - a * a;
             break;

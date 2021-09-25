@@ -8,9 +8,10 @@
 #include <iostream>
 #include <iomanip>
 #include <Windows.h>
+
 using namespace std;
 
-int task_15(){
+int task_15() {
     system("chcp 65001");
     SetConsoleOutputCP(CP_UTF8);
     long double K;
@@ -18,25 +19,32 @@ int task_15(){
     cin >> K;
     long long integerAmountOfMushrooms;
     integerAmountOfMushrooms = K;
-    if (integerAmountOfMushrooms != K){
-        cout << "мы нашли " << K << " гриба в лесу";
+    if (K >= 0) {
+        cout << "мы нашли ";
+    } else {
+        cout << "мы потеряли ";
+        integerAmountOfMushrooms = abs(integerAmountOfMushrooms);
+        K = abs(K);
+    }
+    if (integerAmountOfMushrooms != K) {
+        cout << K << " гриба в лесу";
     } else {
         integerAmountOfMushrooms %= 100;
-        if(integerAmountOfMushrooms > 20) {
+        if (integerAmountOfMushrooms > 20) {
             integerAmountOfMushrooms %= 10;
         }
 
         if (integerAmountOfMushrooms == 0) {
-            cout << "мы нашли " << K << " грибов в лесу";
+            cout << abs(K) << " грибов в лесу";
         }
-        if(integerAmountOfMushrooms == 1){
-            cout << "мы нашли " << K << " гриб в лесу";
+        if (integerAmountOfMushrooms == 1) {
+            cout << abs(K) << " гриб в лесу";
         }
-        if(integerAmountOfMushrooms < 5 && integerAmountOfMushrooms != 1){
-            cout << "мы нашли " << K << " гриба в лесу";
+        if (integerAmountOfMushrooms < 5 && integerAmountOfMushrooms != 1) {
+            cout << abs(K) << " гриба в лесу";
         }
-        if(integerAmountOfMushrooms > 4){
-            cout << "мы нашли " << K << " грибов в лесу";
+        if (integerAmountOfMushrooms > 4) {
+            cout << abs(K) << " грибов в лесу";
         }
     }
     return 0;

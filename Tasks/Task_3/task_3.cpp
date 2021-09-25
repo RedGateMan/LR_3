@@ -7,6 +7,7 @@
 определения условия и без неё.
 */
 #include <iostream>
+
 using namespace std;
 
 int task_3() {
@@ -17,6 +18,6 @@ int task_3() {
     cout << "The biggest is " << (X > Y ? X : Y) << endl;
     //bool
     flag = X > Y;
-    cout << "The biggest is "<< (flag ? X : Y) << endl;
+    cout << "The biggest is " << (flag ? X : Y) << endl;
     return 0;
 }

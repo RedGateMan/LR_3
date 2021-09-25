@@ -9,15 +9,16 @@
 */
 #include <iostream>
 #include <cmath>
+
 using namespace std;
 
-int task_8(){
+int task_8() {
     int marker;
     long double x = 0;
     cout << "Choose type of f(x)";
     cin >> marker;
     long double function = 0;
-    switch(marker){
+    switch (marker) {
         case 1:
             function = 2 * x;
             cout << "You've chosen f(x) = 2x" << endl;
@@ -41,11 +42,11 @@ int task_8(){
     cin >> a;
     cout << "Enter B = ";
     cin >> b;
-    if (z > 0){
-        x = 1 / (pow(z,2) + 2 * z);
+    if (z > 0) {
+        x = 1 / (pow(z, 2) + 2 * z);
         cout << "X = 1/(Z^2 + 2*Z)" << endl;
-    } else if (z <= 0){
-        x = 1 - pow(z,3);
+    } else if (z <= 0) {
+        x = 1 - pow(z, 3);
         cout << "X = 1 - Z^3" << endl;
     }
     y = (2.5 * exp(-3 * x) - 4 * b * pow(x, 2)) / (log(fabs(x)) + function);

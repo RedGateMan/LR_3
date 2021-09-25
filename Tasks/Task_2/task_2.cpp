@@ -7,6 +7,7 @@
 K вводится с клавиатуры.
 */
 #include <iostream>
+
 using namespace std;
 
 int task_2() {
@@ -24,29 +25,25 @@ int task_2() {
     cin >> B;
     cout << "Enter C:";
     cin >> C;
-    if (X < Y){
+    if (X < Y) {
         X = 0;
-    }
-    else if (Y < X){
+    } else if (Y < X) {
         Y = 0;
+    } else if (X == Y) {
+        X = Y = 0;
     }
-    else if (X == Y){
-        X = Y =0;
-    }
-    cout << "X:" << X << " " << "Y:" <<  Y << endl;
-    if (A > B && A > C ){
+    cout << "X:" << X << " " << "Y:" << Y << endl;
+    if (A > B && A > C) {
         A = A - K;
         cout << "A:" << A << endl;
         cout << "B:" << B << endl;
         cout << "C:" << C << endl;
-    }
-    else if (B > A && B > C){
+    } else if (B > A && B > C) {
         B = B - K;
         cout << "A:" << A << endl;
-        cout << "B:" <<  B << endl;
+        cout << "B:" << B << endl;
         cout << "C:" << C << endl;
-    }
-    else if (C > B && C > A){
+    } else if (C > B && C > A) {
         C = C - K;
         cout << "A:" << A << endl;
         cout << "B:" << B << endl;
