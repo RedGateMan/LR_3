@@ -28,7 +28,9 @@ int task_12() {
     cout << "Enter second circle radius:" << endl;
     cin >> secondCircleRadius;
     long double distance = sqrt(pow((x2 - x1), 2) + pow((y2 - y1), 2));
-    if (distance < secondCircleRadius && distance + firstCircleRadius <= secondCircleRadius) {
+    if (x1 == x2 && y1 == y2 && firstCircleRadius == secondCircleRadius) {
+        cout << "Ни одно условие не выполнено";
+    } else if (distance < secondCircleRadius && distance + firstCircleRadius <= secondCircleRadius) {
         cout << "Да";
     } else if (distance < firstCircleRadius && distance + secondCircleRadius <= firstCircleRadius) {
         cout << "Да, но справедливо обратное для двух фигур";
@@ -37,7 +39,5 @@ int task_12() {
     } else {
         cout << "Ни одно условие не выполнено";
     }
-    if (x1 == x2 && y1 == y2 && firstCircleRadius == secondCircleRadius)
-        cout << "Ни одно условие не выполнено";
     return 0;
 }
