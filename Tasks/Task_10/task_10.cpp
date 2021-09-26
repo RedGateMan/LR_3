@@ -6,56 +6,75 @@
 значение.
 */
 #include <iostream>
+#include <iomanip>
 
 using namespace std;
 
-double sinx(double x) {
-    double n = x;
-    double sum = 0.0;
-    int i = 1;
-
-    do {
-        sum += n;
-        n *= -1.0 * x * x / ((2 * i) * (2 * i + 1));
-        i++;
-    } while (abs(n) > 0.000000001);
-
-    return sum;
+long double fabs(long double x) {
+    return x < 0 ? -x : x;
 }
 
-double cosx(double x) {
-    double n = 1.0;
-    double sum = 0.0;
-    int i = 1;
-
-    do {
-        sum += n;
-        n *= -1.0 * x * x / ((2 * i - 1) * (2 * i));
-        i++;
-    } while (abs(n) > 0.000000001);
-
-    return sum;
+long double pow(long double a, long long b) {
+    long double asave = a;
+    if (b == 0) {
+        return 1;
+    } else if (b == 1) {
+        return a;
+    } else
+        for (int i = 1; i < b; i++) {
+            a *= asave;
+        }
+    return a;
 }
 
-/**Хуйня нерабочая, в рот я ебал ваши блядские ряды, я не знаю математику,
-нахуя давать блядские темы, котороые понять самому сложно, а на лекциях мы их будем проходить блять никогда,
-а чтобы разобраться в этом говнище надо будет еще порешать примеры на ПЗ, но блять, у меня ведет Анисимов,
-а это вообще пиздец полный блять, потому что он вообще нихуя не объясняет**/
-double lnx(double x) {
-    double sum = 0.0;
-    int n = 1.0;
-    double an = x;
-    while (abs(an) > 0.000000001) {
-        sum += an;
-        ++n;
-        an *= -x * (n - 1) / n;
+unsigned long long fact(long long x) {///Максимально вводимое число, которое влезает в ячейку память -- 20!
+    unsigned long long result = 1;
+    if (x == 0)
+        return 1;
+    for (int i = 1; i <= x; ++i) {
+        result *= i;
     }
-    return sum;
+    return result;
+}
+
+long double sin(long double x) {
+    long long n = 0;
+    long double result = 0;
+    do {
+        result += (pow(-1, n) * pow(x, 2 * n + 1)) / fact(2 * n + 1);
+        n++;
+    } while (fabs((pow(-1, n) * pow(x, 2 * n + 1)) / fact(2 * n + 1)) > 0.00000001);
+    return result;
+}
+
+long double cos(long double x) {
+    long long n = 0;
+    long double result = 0;
+    do {
+        result += (pow(-1, n) * pow(x, 2 * n)) / fact(2 * n);
+        n++;
+    } while (fabs((pow(-1, n) * pow(x, 2 * n)) / fact(2 * n)) > 0.00000001);
+    return result;
+}
+
+long double
+ln(long double x) {///Функция работает слишком медленно, вероятно из-за вызова остальных функций, или просто ряд слишком медленно сходится
+    x = (1 + x) / (1 - x);
+    long double result = 0;
+    long long n;
+    for (n = 0; n < 1e8; n++)
+        result += (pow(x, 2 * n + 1) / (2 * n + 1));
+    return result * 2;
 }
 
 int task_10() {
-    double x;
+    long double x;
     cin >> x;
-    cout << sinx(x) << " " << cosx(x) << " " << lnx(x);
+    long double a, b, c;
+    cout << fixed << setprecision(10);
+    a = sin(x);
+    b = cos(x);
+    c = ln(x);
+    cout << a << " " << b << " " << c << " ";
     return 0;
 }
