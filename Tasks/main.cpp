@@ -39,7 +39,7 @@ int main() {
             task_9();///OK
             break;
         case 10:
-            task_10();///NO
+            task_10();///OK(Медленно и неточно)
             break;
         case 11:
             task_11();///OK

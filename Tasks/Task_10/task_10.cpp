@@ -1,7 +1,7 @@
 //Лабораторная 2, задача 10. Выполнена: Чижов Е.С.
 
 /*
-Из величин, определяемых выражениями a = sinx, b = cosx, c = ln|x|
+Из величин, определяемых выражениями a = sin(x), b = cos(x), c = ln|x|
 при заданном х, определить и вывести на экран дисплея минимальное
 значение.
 */
@@ -61,7 +61,7 @@ long double
 ln(long double x) {///Функция работает слишком медленно, вероятно из-за вызова остальных функций, или просто ряд слишком медленно сходится
     if (x <= 0) {
         cout << "Logarithm doesn't exist" << endl;
-        return 404;
+        return 0;
     }
     x = (x - 1) / (1 + x);
     long double x1 = x;
@@ -80,9 +80,23 @@ int task_10() {
     cin >> x;
     long double a, b, c;
     cout << fixed << setprecision(10);
+    if (x >= 6.28) {
+        while (x >= 6.28 && x > 0) {
+            x -= 6.28;
+        }
+    }
+    if (x <= 6.28 && x < 0) {
+        while (x <= 6.28 && x < 0) {
+            x += 6.28;
+        }
+    }
     a = sin(x);
     b = cos(x);
-    c = ln(x);
+    if (x >= 2)
+        c = 2;
+    else
+        c = ln(x);
+    //cout << a << " " << b << " " << c;
     if (min(a, min(b, c)) == a) {
         cout << "sin(x) = " << min(a, min(b, c));
     } else if (min(a, min(b, c)) == b) {

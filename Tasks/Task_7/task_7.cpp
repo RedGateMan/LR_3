@@ -73,7 +73,7 @@ int task_7() {
         }
         case 2: {
             double a, b, c;
-            cout << "You've chosen 1-st type of expression ax^4 + bx^2 + c = 0 " << endl;
+            cout << "You've chosen 2-nd type of expression ax^4 + bx^3 + cx^2 + bx + a = 0 " << endl;
             cout << "Enter coefficients: " << endl;
             cout << "a = ";
             cin >> a;
@@ -81,16 +81,17 @@ int task_7() {
             cin >> b;
             cout << "c = ";
             cin >> c;
-            if(a == 0){
-                if(b == 0){
+            if (a == 0) {
+                if (b == 0) {
                     if (c == 0) {
                         //A = 0, B = 0, C = 0
                         cout << "x belongs R";
                         return 0;
                     } else {
-                        cout << "No solutions";
-                        return 0;
+
                     }
+                } else {
+
                 }
             }
             break;
