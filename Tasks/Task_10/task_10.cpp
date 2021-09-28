@@ -43,7 +43,7 @@ long double sin(long double x) {
     do {
         result += (pow(-1, n) * pow(x, 2 * n + 1)) / fact(2 * n + 1);
         n++;
-    } while (fabs((pow(-1, n) * pow(x, 2 * n + 1)) / fact(2 * n + 1)) > 1e-4);
+    } while (fabs((pow(-1, n) * pow(x, 2 * n + 1)) / fact(2 * n + 1)) > 1e-8);
     return result;
 }
 
@@ -53,14 +53,13 @@ long double cos(long double x) {
     do {
         result += (pow(-1, n) * pow(x, 2 * n)) / fact(2 * n);
         n++;
-    } while (fabs((pow(-1, n) * pow(x, 2 * n)) / fact(2 * n)) > 1e-4);
+    } while (fabs((pow(-1, n) * pow(x, 2 * n)) / fact(2 * n)) > 1e-8);
     return result;
 }
 
 long double
-ln(long double x) {///Функция работает слишком медленно, вероятно из-за вызова остальных функций, или просто ряд слишком медленно сходится
+ln(long double x) {
     if (x <= 0) {
-        cout << "Logarithm doesn't exist" << endl;
         return 0;
     }
     x = (x - 1) / (1 + x);
@@ -80,22 +79,22 @@ int task_10() {
     cin >> x;
     long double a, b, c;
     cout << fixed << setprecision(10);
-    if (x >= 6.28) {
-        while (x >= 6.28 && x > 0) {
+    if (x >= 2 || x <= 0)
+        c = 2;
+    else
+        c = ln(x);
+    if (x >= 4) {
+        while (x >= 4 && x > 0) {
             x -= 6.28;
         }
     }
-    if (x <= 6.28 && x < 0) {
-        while (x <= 6.28 && x < 0) {
+    if (x <= -4 && x < 0) {
+        while (x <= -4 && x < 0) {
             x += 6.28;
         }
     }
     a = sin(x);
     b = cos(x);
-    if (x >= 2)
-        c = 2;
-    else
-        c = ln(x);
     //cout << a << " " << b << " " << c;
     if (min(a, min(b, c)) == a) {
         cout << "sin(x) = " << min(a, min(b, c));
