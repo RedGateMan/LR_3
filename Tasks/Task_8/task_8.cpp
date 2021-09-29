@@ -15,7 +15,7 @@ using namespace std;
 int task_8() {
     int marker;
     long double x = 0;
-    cout << "Choose type of f(x)";
+    cout << "Choose function:" << endl << "1) f(x) = 2x" << endl << "2) f(x) = x^3" << endl << "3) f(x) = x/3" << endl;
     cin >> marker;
     long double function = 0;
     switch (marker) {
@@ -32,8 +32,8 @@ int task_8() {
             cout << "You've chosen f(x) = x/3" << endl;
             break;
         default:
-            cout << "Invalid input!" << endl;
-            break;
+            cout << "Invalid input!";
+            return 0;
     }
     long double y, z, a, b;
     cout << "Enter Z = ";

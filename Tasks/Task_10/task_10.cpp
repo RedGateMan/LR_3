@@ -76,6 +76,7 @@ ln(long double x) {
 
 int task_10() {
     long double x;
+    cout << "Vadim, If X is big, values won't be correctly counted, but lowwest will be lowwest" << endl;
     cin >> x;
     long double a, b, c;
     cout << fixed << setprecision(10);
