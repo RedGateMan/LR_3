@@ -20,4 +20,3 @@ int task_1() {
     }
     return 0;
 }
-

@@ -51,4 +51,3 @@ int task_2() {
     }
     return 0;
 }
-

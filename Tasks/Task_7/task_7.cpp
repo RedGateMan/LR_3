@@ -192,15 +192,15 @@ int task_7() {
                 if (c == 0) {
                     //x^3 + bx = 0
                     cout << "x1 = 0";
-                    cout << "x2 = " << pow(-b, 1/3);
+                    cout << "x2 = " << pow(-b, 1 / 3);
                 } else {
                     //x^3 + bx + c = 0
                     long double l = -1e5, r = 1e9, mid;
-                    while(fabs(l - r) > 1e-5){
+                    while (fabs(l - r) > 1e-5) {
                         mid = (l + r) / 2;
-                        if(pow(mid, 3) + b * mid + c < 0) {
+                        if (pow(mid, 3) + b * mid + c < 0) {
                             l = mid;
-                        }else{
+                        } else {
                             r = mid;
                         }
                     }
@@ -213,6 +213,5 @@ int task_7() {
             cout << "Vadim, choose correct type of expression!";
             break;
     }
-
     return 0;
 }

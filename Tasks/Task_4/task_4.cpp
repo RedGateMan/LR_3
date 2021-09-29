@@ -83,4 +83,3 @@ int task_4() {
     }
     return 0;
 }
-

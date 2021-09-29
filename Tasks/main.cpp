@@ -30,7 +30,7 @@ int main() {
             task_6();///OK
             break;
         case 7:
-            task_7();///NO
+            task_7();///OK
             break;
         case 8:
             task_8();///OK

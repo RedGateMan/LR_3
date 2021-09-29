@@ -29,8 +29,6 @@ long double pow(long double a, long long b) {
 
 unsigned long long fact(long long x) {///Максимально вводимое число, которое влезает в ячейку память -- 20!
     unsigned long long result = 1;
-    if (x == 0)
-        return 1;
     for (int i = 1; i <= x; ++i) {
         result *= i;
     }
@@ -57,8 +55,7 @@ long double cos(long double x) {
     return result;
 }
 
-long double
-ln(long double x) {
+long double ln(long double x) {
     x = fabs(x);
     x = (x - 1) / (1 + x);
     long double x1 = x;
