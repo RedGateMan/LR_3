@@ -59,6 +59,7 @@ long double cos(long double x) {
 
 long double
 ln(long double x) {
+    x = fabs(x);
     if (x <= 0) {
         return 0;
     }
@@ -80,7 +81,7 @@ int task_10() {
     cin >> x;
     long double a, b, c;
     cout << fixed << setprecision(10);
-    if (x >= 2 || x <= 0)
+    if (x >= 2 || x == 0)
         c = 2;
     else
         c = ln(x);
