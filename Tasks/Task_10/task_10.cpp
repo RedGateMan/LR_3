@@ -60,9 +60,6 @@ long double cos(long double x) {
 long double
 ln(long double x) {
     x = fabs(x);
-    if (x <= 0) {
-        return 0;
-    }
     x = (x - 1) / (1 + x);
     long double x1 = x;
     long double result = x1;
