@@ -3,7 +3,6 @@
 
 using namespace std;
 
-// TODO: Протестить 8 задание
 int main() {
     int a;
     cout << "Enter task number:";
@@ -37,7 +36,7 @@ int main() {
             task_9();///OK
             break;
         case 10:
-            task_10();///OK(Медленно и неточно Нихуя не работает если честно, но да похуй)
+            task_10();///OK
             break;
         case 11:
             task_11();///OK
