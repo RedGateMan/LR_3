@@ -204,7 +204,7 @@ int task_7() {
                         cout << "x1 = " << -2 * sqrt(Q) * cos(phi) << endl
                              << "x2 = " << -2 * sqrt(Q) * cos(phi + (2. / 3 * M_PI)) << endl
                              << "x3 = " << -2 * sqrt(Q) * cos(phi - (2. / 3 * M_PI));
-                    } else {
+                    } else { //Рассмотреть при S < 0 и равно 0
                         long double l = -1e6, r = 1e6, mid;
                         while (r - l >= 1e-5) {
                             mid = (r + l) / 2;

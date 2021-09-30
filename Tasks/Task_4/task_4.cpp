@@ -59,7 +59,6 @@ int task_4() {
              << sqrt(pow(x, 2) + pow(y, 2));
         return 0;
     }
-
     if (k < 0) {//квадрат в 3 точка в 4
         swap(x, y);
         x = -x;
