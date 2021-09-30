@@ -195,16 +195,27 @@ int task_7() {
                     cout << "x2 = " << pow(-b, 1 / 3);
                 } else {
                     //x^3 + bx + c = 0
-                    long double l = -1e5, r = 1e9, mid;
-                    while (fabs(l - r) > 1e-5) {
-                        mid = (l + r) / 2;
-                        if (pow(mid, 3) + b * mid + c < 0) {
-                            l = mid;
-                        } else {
-                            r = mid;
+                    //a = 0
+                    long double Q = (-3 * b) / 9;
+                    long double R = (27 * c) / 54;
+                    long double S = pow(Q, 3) - pow(R, 2);
+                    if (S > 0) {
+                        long double phi = (1. / 3) * acos(R / sqrt(pow(Q, 3)));
+                        cout << "x1 = " << -2 * sqrt(Q) * cos(phi) << endl
+                             << "x2 = " << -2 * sqrt(Q) * cos(phi + (2. / 3 * M_PI)) << endl
+                             << "x3 = " << -2 * sqrt(Q) * cos(phi - (2. / 3 * M_PI));
+                    } else {
+                        long double l = -1e6, r = 1e6, mid;
+                        while (r - l >= 1e-5) {
+                            mid = (r + l) / 2;
+                            if (pow(mid, 3) + b * mid + c < 0) {
+                                l = mid;
+                            } else {
+                                r = mid;
+                            }
                         }
+                        cout << "x1 = " << mid;
                     }
-                    cout << "x1 = " << mid;
                 }
             }
             break;
