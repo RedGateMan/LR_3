@@ -16,7 +16,6 @@ int task_14() {
     cin >> a >> b >> c;
     cout << "Enter hole parameters (x, y)" << endl;
     cin >> x >> y;
-
     long double brickHeight, brickWidth;
     if (a <= b && a <= c) {// Вычисление минимальных параметров кирпича
         brickHeight = a;
@@ -28,7 +27,6 @@ int task_14() {
         brickHeight = c;
         brickWidth = min(b, a);
     }
-
     long double holeHeight, holeWidth;
     if (x <= y) { //Вычисление параметров отверстия
         holeHeight = x;
@@ -37,7 +35,6 @@ int task_14() {
         holeHeight = y;
         holeWidth = x;
     }
-
     if (holeHeight >= brickHeight &&
         holeWidth >= brickWidth) {//Получение ответа: пройдет ли кирпич в отверстие, или нет
         cout << "YES!";

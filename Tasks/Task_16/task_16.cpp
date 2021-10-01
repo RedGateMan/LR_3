@@ -3,7 +3,6 @@
 /*
 Введены два числа. Выведите их НОД и НОК.
 */
-
 #include <iostream>
 
 using namespace std;

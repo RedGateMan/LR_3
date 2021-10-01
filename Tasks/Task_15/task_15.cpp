@@ -4,9 +4,7 @@
 Для дробного числа К напечатать фразу "мы нашли К грибов в
 лесу", согласовав окончание слова "гриб" с числом К.
 */
-
 #include <iostream>
-#include <iomanip>
 #include <Windows.h>
 
 using namespace std;
@@ -33,7 +31,6 @@ int task_15() {
         if (integerAmountOfMushrooms > 20) {
             integerAmountOfMushrooms %= 10;
         }
-
         if (integerAmountOfMushrooms == 0) {
             cout << abs(K) << " грибов в лесу";
         }

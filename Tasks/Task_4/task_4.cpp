@@ -71,7 +71,6 @@ int task_4() {
     if (y > k) {
         cout << "The dot is outside the square. Minimal distance is "
              << sqrt(pow(x, 2) + pow(k - y, 2));
-
     } else if (x > k) {
         cout << "The dot is outside the square. Minimal distance is "
              << sqrt(pow(x - k, 2) + pow(y, 2));
