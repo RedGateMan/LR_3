@@ -28,14 +28,16 @@ int task_12() {
     cout << "Enter second circle radius:" << endl;
     cin >> secondCircleRadius;
     long double distance = sqrt(pow((x2 - x1), 2) + pow((y2 - y1), 2));
-    if (x1 == x2 && y1 == y2 && firstCircleRadius == secondCircleRadius) {
-        cout << "Ни одно условие не выполнено";
-    } else if (distance < secondCircleRadius && distance + firstCircleRadius <= secondCircleRadius) {
-        cout << "Да";
-    } else if (distance < firstCircleRadius && distance + secondCircleRadius <= firstCircleRadius) {
-        cout << "Да, но справедливо обратное для двух фигур";
-    } else if (distance <= firstCircleRadius + secondCircleRadius) {
-        cout << "Фигуры пересекаются";
+    if (x1 != x2 || y1 != y2 || firstCircleRadius != secondCircleRadius) {
+        if (distance < secondCircleRadius && distance + firstCircleRadius <= secondCircleRadius) {
+            cout << "Да";
+        } else if (distance < firstCircleRadius && distance + secondCircleRadius <= firstCircleRadius) {
+            cout << "Да, но справедливо обратное для двух фигур";
+        } else if (distance <= firstCircleRadius + secondCircleRadius) {
+            cout << "Фигуры пересекаются";
+        } else {
+            cout << "Ни одно условие не выполнено";
+        }
     } else {
         cout << "Ни одно условие не выполнено";
     }

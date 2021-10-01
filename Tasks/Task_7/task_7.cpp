@@ -105,14 +105,10 @@ int task_7() {
                                  << (-c + sqrt(discriminant)) / (2 * b);
                         } else if (discriminant == 0) {
                             cout << "x2 = " << -c / (2 * b);
-                        } else {
-                            cout << "There are no solutions for the expression";
-                            return 0;
                         }
                     }
                 }
             } else {
-                //ax^4 + bx^3 + cx^2 + bx + a = 0
                 if (b == 0) {
                     if (c == 0) {
                         //ax^4 + a = 0
@@ -165,6 +161,79 @@ int task_7() {
                                 }
                             } else {
                                 cout << "There are no solutions for the expression";
+                            }
+                        }
+                    }
+                } else {
+                    if (c == 0) {
+                        //ax^4 + bx^3 + bx + a = 0
+                        //at^2 + bt - 2a = 0
+                        //t = x + 1 / x
+                        long double discriminant = pow(b, 2) - 8 * pow(a, 2);
+                        if (discriminant > 0) {
+                            long double t1 = (-b - sqrt(discriminant)) / (2 * a);
+                            long double t2 = (-b + sqrt(discriminant)) / (2 * a);
+                            //x2 - xt1 + 1 = 0
+                            long double discriminant1 = pow(t1, 2) - 4;
+                            if (discriminant1 > 0) {
+                                long double x1 = (t1 - sqrt(discriminant1)) / 2;
+                                long double x2 = (t1 + sqrt(discriminant1)) / 2;
+                                if (x1 != 0 && x2 != 0) {
+                                    cout << "x1 = " << x1 << " " << "x2 = " << x2;
+                                } else if (x1 != 0) {
+                                    cout << "x1 = " << x1;
+                                } else if (x2 != 0) {
+                                    cout << "x2 = " << x2;
+                                }
+                            }
+                            //x2 - xt2 + 1 = 0
+                            long double discriminant2 = pow(t2, 2) - 4;
+                            if (discriminant2 > 0) {
+                                long double x1 = (t2 - sqrt(discriminant1)) / 2;
+                                long double x2 = (t2 + sqrt(discriminant1)) / 2;
+                                if (x1 != 0 && x2 != 0) {
+                                    cout << "x3 = " << x1 << " " << "x4 = " << x2;
+                                } else if (x1 != 0) {
+                                    cout << "x3 = " << x1;
+                                } else if (x2 != 0) {
+                                    cout << "x4 = " << x2;
+                                } else {
+                                    cout << "There are no solutions for the expression";
+                                }
+                            }
+                        }
+                    } else {
+                        //ax^4 + bx^3 + cx^2 + bx + a = 0
+                        //at^2 + bt + (c - 2a) = 0
+                        //t = x + 1 / x
+                        long double discriminant = pow(b, 2) - 4 * a * (c - 2 * a);
+                        if (discriminant > 0) {
+                            //at^2 + bt + c - 2a = 0
+                            long double t1 = (-b - sqrt(discriminant)) / (2 * a);
+                            long double discriminant1 = pow(t1, 2) - 4 * a * (c - 2 * a);
+                            if (discriminant1 > 0) {
+                                long double x1 = (-t1 - sqrt(discriminant1)) / 2;
+                                long double x2 = (-t1 + sqrt(discriminant1)) / 2;
+                                if (x1 != 0 && x2 != 0) {
+                                    cout << "x1 = " << x1 << " " << "x2 = " << x2;
+                                } else if (x1 != 0) {
+                                    cout << "x1 = " << x1;
+                                } else if (x2 != 0) {
+                                    cout << "x2 = " << x2;
+                                }
+                            }
+                        }
+                        long double t2 = (-b + sqrt(discriminant)) / (2 * a);
+                        long double discriminant2 = pow(t2, 2) - 4 * a * (c - 2 * a);
+                        if (discriminant2 > 0) {
+                            long double x1 = (-t2 - sqrt(discriminant2)) / 2;
+                            long double x2 = (-t2 + sqrt(discriminant2)) / 2;
+                            if (x1 != 0 && x2 != 0) {
+                                cout << "x1 = " << x1 << " " << "x2 = " << x2;
+                            } else if (x1 != 0) {
+                                cout << "x1 = " << x1;
+                            } else if (x2 != 0) {
+                                cout << "x2 = " << x2;
                             }
                         }
                     }
