@@ -8,6 +8,7 @@
 
 using namespace std;
 
+
 int task_2() {
     long double d = 0, result = 0;
     long double n = 0;

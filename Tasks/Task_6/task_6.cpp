@@ -7,6 +7,7 @@
 
 using namespace std;
 
+
 int task_6() {
     int N;
     double a, b, c;

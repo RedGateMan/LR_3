@@ -11,6 +11,7 @@
 
 using namespace std;
 
+
 int task_3() {
     long double y = 0, x = 0;
     const long double B = M_PI / 2, A = 0, M = 20, H = (B - A) / 20;

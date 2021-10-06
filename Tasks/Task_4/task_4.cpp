@@ -10,6 +10,7 @@
 
 using namespace std;
 
+
 int task_4() {
     long long N, sum = 0, expressionType;
     cout << "1) Cycle" << endl << "2) Formula" << endl;
