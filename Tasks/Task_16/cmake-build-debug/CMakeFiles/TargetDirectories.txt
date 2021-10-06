@@ -1,3 +1,0 @@
-E:/LR's/LR_2/Tasks/Task_16/cmake-build-debug/CMakeFiles/Task_16.dir
-E:/LR's/LR_2/Tasks/Task_16/cmake-build-debug/CMakeFiles/edit_cache.dir
-E:/LR's/LR_2/Tasks/Task_16/cmake-build-debug/CMakeFiles/rebuild_cache.dir

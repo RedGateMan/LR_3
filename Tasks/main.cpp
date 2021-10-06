@@ -1,66 +1,40 @@
 #include <iostream>
 #include "Tasks.h"
 
-using namespace std;
-
 int main() {
     int a;
-    cout << "Enter task number:";
-    cin >> a;
+    std::cout << "Enter task number:";
+    std::cin >> a;
     switch (a) {
         case 1:
             task_1();///OK
             break;
         case 2:
-            task_2();///OK
+            task_2();///NO
             break;
         case 3:
-            task_3();///OK
+            task_3();///NO
             break;
         case 4:
-            task_4();///OK
+            task_4();///NO
             break;
         case 5:
-            task_5();///OK
+            task_5();///NO
             break;
         case 6:
-            task_6();///OK
+            task_6();///NO
             break;
         case 7:
-            task_7();///OK
+            task_7();///NO
             break;
         case 8:
-            task_8();///OK
+            task_8();///NO
             break;
         case 9:
-            task_9();///OK
-            break;
-        case 10:
-            task_10();///OK
-            break;
-        case 11:
-            task_11();///OK
-            break;
-        case 12:
-            task_12();///OK
-            break;
-        case 13:
-            task_13();///OK
-            break;
-        case 14:
-            task_14();///OK
-            break;
-        case 15:
-            task_15();///OK
-            break;
-        case 16:
-            task_16();///OK
-            break;
-        case 17:
-            task_17();///OK
+            task_9();///NO
             break;
         default:
-            cout << "Vadim, enter correct task number!";
+            std::cout << "Vadim, enter correct task number!";
             break;
     }
 }

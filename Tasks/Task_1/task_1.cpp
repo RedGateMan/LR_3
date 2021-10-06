@@ -1,21 +1,29 @@
-//Лабораторная 2, задача 1. Выполнена: Чижов Е.С.
+//Лабораторная 3, задача 1. Выполнена: Чижов Е.С.
 
 /*
-Заданы два целых числа x и y. Определите, верно ли, что одно из них
-делится на другое без остатка, или нет.
+ * Искользуя WHILE вычислить значение многочлена записанного в общем виде
 */
 #include <iostream>
 
 using namespace std;
 
 int task_1() {
-    int x, y;
-    cout << "Enter variables:" << endl;
-    cin >> x >> y;
-    if (x % y == 0) {
-        cout << "YES" << endl;
-    } else {
-        cout << "NO" << endl;
+    int a, b, i = 1;
+    double result = 0;
+    while (i < 30) {
+        if (i % 2 != 0) {
+            a = i;
+        } else{
+            a = i/2;
+        }
+        if(i % 2 != 0){
+            b = i * i;
+        }else{
+            b = i * i * i;
+        }
+        result+= (a - b) * (a - b);
+        i++;
     }
+    cout << "Result: " << result;
     return 0;
 }

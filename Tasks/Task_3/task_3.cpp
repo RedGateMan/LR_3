@@ -7,17 +7,17 @@
 определения условия и без неё.
 */
 #include <iostream>
+#include <cmath>
 
 using namespace std;
 
 int task_3() {
-    double X, Y;
-    bool flag;
-    cin >> X;
-    cin >> Y;
-    cout << "The biggest is " << (X > Y ? X : Y) << endl;
-    //bool
-    flag = X > Y;
-    cout << "The biggest is " << (flag ? X : Y) << endl;
+    long double y = 0, x = 0;
+    const long double B = M_PI / 2, A = 0, M = 20, H = (B - A) / 20;
+    for(int i = 0; i <= ((B - A) / H); i++){
+        x = A + i * H;
+        y = sin(x) - cos(x);
+        cout << i+1 << ")" << "x = " << x << " y = " << y << endl;
+    }
     return 0;
 }
