@@ -10,19 +10,19 @@ int main() {
             task_1();///OK
             break;
         case 2:
-            task_2();///NO
+            task_2();///OK
             break;
         case 3:
-            task_3();///NO
+            task_3();///OK
             break;
         case 4:
-            task_4();///NO
+            task_4();///OK
             break;
         case 5:
-            task_5();///NO
+            task_5();///NEED TESTING
             break;
         case 6:
-            task_6();///NO
+            task_6();///NEED TESTING
             break;
         case 7:
             task_7();///NO

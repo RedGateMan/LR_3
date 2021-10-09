@@ -1,40 +1,35 @@
-//Лабораторная 2, задача 6. Выполнена: Чижов Е.С.
+//Лабораторная 3, задача 6. Выполнена: Чижов Е.С.
 
 /*
-Составить программу используя переключатель switch:
+ * Необходимо приближенно найти корень уравнения f(x) = 0 для
+ * функции из своего варианта. Корень нужно найти по следующему алгоритму:
+ * перебираем значения от начала до конца интервала с некоторым шагом и ищем
+ * значение функции, минимальное по модулю. Аргумент, при котором оно
+ * достигается, считаем корнем уравнения. Программа должна запросить у
+ * пользователя, на сколько частей разделить область поиска корня, вычислить шаг,
+ * с которым нужно проходить значения, пройти в цикле нужные значения, найти
+ * корень и вывести его.
 */
 #include <iostream>
+#include <cmath>
 
 using namespace std;
 
-
 int task_6() {
-    int N;
-    double a, b, c;
-    cout << "Enter N(case number 2, 3, 7, 56):";
-    cin >> N;
-    cout << "Enter a:";
-    cin >> a;
-    cout << "Enter b:";
-    cin >> b;
-    cout << "Enter c:";
-    cin >> c;
-    switch (N) {
-        case 2:
-            cout << b * c - a * a;
-            break;
-        case 3:
-            cout << a - b * c;
-            break;
-        case 7:
-            cout << a * a + c;
-            break;
-        case 56:
-            cout << b * c;
-            break;
-        default:
-            cout << (a + b) * (a + b) * (a + b);
-            break;
+    long double x = 0.5;
+    cout << "Enter step:";
+    long double step;
+    cin >> step;
+    long double function;
+    long double minFunction = 1e19;
+    long double minArgument;
+    for (; x <= 1.5; x += step) {
+        function = sin(log10(x)) + x * 1/tan(pow(x,2));
+        if(fabs(function) < minFunction){
+            minArgument = x;
+            minFunction = fabs(function);
+        }
     }
+    cout << "x = " << minArgument;
     return 0;
 }

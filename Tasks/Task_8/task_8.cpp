@@ -14,43 +14,22 @@
 using namespace std;
 
 int task_8() {
-    int marker;
-    long double x = 0;
-    cout << "Choose function:" << endl << "1) f(x) = 2x" << endl << "2) f(x) = x^3" << endl << "3) f(x) = x/3" << endl;
-    cin >> marker;
-    long double function = 0;
-    switch (marker) {
-        case 1:
-            function = 2 * x;
-            cout << "You've chosen f(x) = 2x" << endl;
-            break;
-        case 2:
-            function = pow(x, 3);
-            cout << "You've chosen f(x) = x^3" << endl;
-            break;
-        case 3:
-            function = x / 3;
-            cout << "You've chosen f(x) = x/3" << endl;
-            break;
-        default:
-            cout << "Invalid input!";
-            return 0;
+    int a[7];
+    for (int i = 1; i < (int) 1e6; i++) {
+        int isave = i;
+        int counter = 0;
+        while (isave > 0) {
+            a[counter] = isave % 10;
+            isave /= 10;
+            counter++;
+        }
+        int sum = 0;
+        for(int j = 0; j < counter; j++){
+            sum += pow(a[j], counter);
+        }
+        if(sum == i){
+            cout << i << endl;
+        }
     }
-    long double y, z, a, b;
-    cout << "Enter Z = ";
-    cin >> z;
-    cout << "Enter A = ";
-    cin >> a;
-    cout << "Enter B = ";
-    cin >> b;
-    if (z > 0) {
-        x = 1 / (pow(z, 2) + 2 * z);
-        cout << "X = 1/(Z^2 + 2*Z)" << endl;
-    } else if (z <= 0) {
-        x = 1 - pow(z, 3);
-        cout << "X = 1 - Z^3" << endl;
-    }
-    y = (2.5 * exp(-3 * x) - 4 * b * pow(x, 2)) / (log(fabs(x)) + function);
-    cout << "The answer is: " << y;
     return 0;
 }

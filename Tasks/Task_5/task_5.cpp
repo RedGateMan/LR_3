@@ -48,7 +48,7 @@ long double function(long double x, long double N) {
 
 int task_5() {
     long long N;
-    cout << "Enter integer N: ";
+    cout << "Enter integer 0 < N < 11: ";
     cin >> N;
     long long amount;
     cout << "Enter amount of arguments: ";
@@ -58,7 +58,7 @@ int task_5() {
         cout << "Enter x: ";
         cin >> x;
         cout << "S(x) = " << function(x, N) << endl;
-        cout << "Y(x) = " << (-1 - pow(x, 2) / 2) * cos(x) - x / 2 * sin(x) << endl;
+        cout << "Y(x) = " << (1 - pow(x, 2) / 2) * cos(x) - x / 2 * sin(x) << endl;
     }
     return 0;
 }
