@@ -1,7 +1,7 @@
 //Лабораторная 3, задача 9. Выполнена: Чижов Е.С.
 
 /*
-Вычислить сумму
+Вычислить сумму ряда
 */
 #include <iostream>
 #include <cmath>
@@ -14,14 +14,15 @@ int task_9() {
     cin >> N;
     long double a[N];
     long double sum = 0;
-    for(int i = 0; i < N; i++){
-        //srand(time(nullptr));
+    srand(static_cast<unsigned int>(time(nullptr)));
+    for (int i = 0; i < N; i++) {
         a[i] = rand() % 1000;
-        sum += pow(2,i) * pow(-1,i) * a[i];
+        sum += pow(2, i) * pow(-1, i) * a[i];
     }
-    for(int i = 0; i < N; i++){
+    /*for (int i = 0; i < N; i++) {
         cout << a[i] << endl;
     }
+    */
     cout << sum;
     return 0;
 }

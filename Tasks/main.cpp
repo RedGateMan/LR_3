@@ -1,6 +1,8 @@
 #include <iostream>
 #include "Tasks.h"
 
+//TODO: Проверка на тип входных данных и проверки на отрицательное или положительное
+
 int main() {
     int a;
     std::cout << "Enter task number:";
@@ -25,13 +27,13 @@ int main() {
             task_6();///NEED TESTING
             break;
         case 7:
-            task_7();///NO
+            task_7();///OK
             break;
         case 8:
-            task_8();///NO
+            task_8();///OK
             break;
         case 9:
-            task_9();///NO
+            task_9();///OK
             break;
         default:
             std::cout << "Vadim, enter correct task number!";
