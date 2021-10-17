@@ -1,4 +1,5 @@
 //Лабораторная 3, задача 6. Выполнена: Чижов Е.С.
+//Вариант 11
 
 /*
  * Необходимо приближенно найти корень уравнения f(x) = 0 для
@@ -12,14 +13,16 @@
 */
 #include <iostream>
 #include <cmath>
+#include "E:\LR's\LR_3\Tasks\functions.h"
 
 using namespace std;
 
 int task_6() {
     long double x = 0.5;
-    cout << "Enter step:";
-    long double step;
-    cin >> step;
+    cout << "Enter amount of search areas:";
+    long double amountOfAreas;
+    amountOfAreas = readInt(0, 1e9);
+    long double step = 1./amountOfAreas;
     long double function;
     long double minFunction = 1e19;
     long double minArgument;

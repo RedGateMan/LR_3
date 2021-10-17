@@ -1,12 +1,13 @@
 #include <iostream>
 #include "Tasks.h"
+#include "functions.h"
 
 //TODO: Проверка на тип входных данных и проверки на отрицательное или положительное
 
 int main() {
-    int a;
+    long long a;
     std::cout << "Enter task number:";
-    std::cin >> a;
+    a = readInt(1, 9);
     switch (a) {
         case 1:
             task_1();///OK

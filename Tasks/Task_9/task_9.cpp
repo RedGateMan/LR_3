@@ -6,12 +6,14 @@
 #include <iostream>
 #include <cmath>
 #include <ctime>
+#include "E:\LR's\LR_3\Tasks\functions.h"
 
 using namespace std;
 
 int task_9() {
     long long N;
-    cin >> N;
+    cout << "Eneter n:";
+    N = readInt(0, 1e9);
     long double a[N];
     long double sum = 0;
     srand(static_cast<unsigned int>(time(nullptr)));

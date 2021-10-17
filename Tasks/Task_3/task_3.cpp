@@ -1,4 +1,4 @@
-//Лабораторная 2, задача 3. Выполнена: Чижов Е.С.
+//Лабораторная 3, задача 3. Выполнена: Чижов Е.С.
 
 /*
 Написать программу нахождения максимального из двух
@@ -14,7 +14,7 @@ using namespace std;
 
 int task_3() {
     long double y = 0, x = 0;
-    const long double B = M_PI / 2, A = 0, M = 20, H = (B - A) / 20;
+    const long double B = M_PI / 2, A = 0, M = 20, H = (B - A) / M;
     for(int i = 0; i <= ((B - A) / H); i++){
         x = A + i * H;
         y = sin(x) - cos(x);

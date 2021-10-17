@@ -13,5 +13,6 @@ add_executable(main main.cpp
         task_7 Task_7/task_7.cpp
         task_8 Task_8/task_8.cpp
         task_9 Task_9/task_9.cpp
-        Tasks.h cmake-build-debug/My_math.h
-        My_math.h)
+        Tasks.h
+        functions.cpp
+        functions.h)

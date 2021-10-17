@@ -7,17 +7,18 @@
  * 4.2 Без использования цикла.
 */
 #include <iostream>
+#include "E:\LR's\LR_3\Tasks\functions.h"
 
 using namespace std;
-
 
 int task_4() {
     long long N, sum = 0, expressionType;
     cout << "1) Cycle" << endl << "2) Formula" << endl;
-    cin >> expressionType;
-    switch(expressionType){
+    expressionType = readInt(1, 2);
+    cout << "Enter N:";
+    N = readInt(1, (long long)1e16);
+    switch (expressionType) {
         case 1: {
-            cin >>N;
             for (int i = 1; i <= N; i++) {
                 if (i % 2 == 0) {
                     sum += i;
@@ -26,12 +27,11 @@ int task_4() {
             cout << sum;
             break;
         }
-        case 2:{
-            cin >> N;
-            if(N % 2 == 0){
-                cout << N*(2+N) / 4 ;
-            }else{
-                cout << (N-1)*(2+N-1) / 4;
+        case 2: {
+            if (N % 2 == 0) {
+                cout << N * (2 + N) / 4;
+            } else {
+                cout << (N - 1) * (2 + N - 1) / 4;
             }
             break;
         }
@@ -40,4 +40,3 @@ int task_4() {
     }
     return 0;
 }
-// 1 2 3 4 5 6 7 8

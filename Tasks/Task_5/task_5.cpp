@@ -1,4 +1,5 @@
 //Лабораторная 3, задача 5. Выполнена: Чижов Е.С.
+//Вариант 11
 
 /*
  * Необходимо разложить функцию Y(x) из своего варианта в ряд
@@ -12,29 +13,9 @@
 */
 #include <iostream>
 #include <cmath>
+#include "E:\LR's\LR_3\Tasks\functions.h"
 
 using namespace std;
-
-long double myPow(long double a, long long b) {
-    long double asave = a;
-    if (b == 0) {
-        return 1;
-    } else if (b == 1) {
-        return a;
-    } else
-        for (int i = 1; i < b; i++) {
-            a *= asave;
-        }
-    return a;
-}
-
-unsigned long long myFact(long long x) {///Максимально вводимое число, которое влезает в ячейку память -- 20!
-    unsigned long long result = 1;
-    for (int i = 1; i <= x; ++i) {
-        result *= i;
-    }
-    return result;
-}
 
 long double function(long double x, long double N) {
     long double result = 0;
@@ -47,16 +28,17 @@ long double function(long double x, long double N) {
 }
 
 int task_5() {
+
     long long N;
-    cout << "Enter integer 0 < N < 11: ";
-    cin >> N;
+    cout << "Enter amount of steps 0 < N < 11: ";
+    N = readInt(1, 10);
     long long amount;
     cout << "Enter amount of arguments: ";
-    cin >> amount;
+    amount = readInt(0, 1e6);
     long double x;
     for (int i = 0; i < amount; i++) {
         cout << "Enter x: ";
-        cin >> x;
+        x = readFloat(0.1, 1);
         cout << "S(x) = " << function(x, N) << endl;
         cout << "Y(x) = " << (1 - pow(x, 2) / 2) * cos(x) - x / 2 * sin(x) << endl;
     }
